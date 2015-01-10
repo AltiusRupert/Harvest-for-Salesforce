@@ -1,23 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Harvest</fullName>
     <types>
-        <members>*</members>
+        <members>DecimalRange</members>
+        <members>DecimalRangeTest</members>
+        <members>Harvest</members>
+        <members>HarvestAccountRefresh</members>
+        <members>HarvestAsyncControl</members>
+        <members>HarvestClient</members>
+        <members>HarvestClientExportWizard</members>
+        <members>HarvestClientImportWizard</members>
+        <members>HarvestContact</members>
+        <members>HarvestCreateClientController</members>
+        <members>HarvestCreateClientController_Test</members>
+        <members>HarvestInboundScheduler</members>
+        <members>HarvestInboundSync</members>
+        <members>HarvestInboundSyncController</members>
+        <members>HarvestInboundSync_Test</members>
+        <members>HarvestInvoice</members>
+        <members>HarvestInvoiceLine</members>
+        <members>HarvestInvoiceMessage</members>
+        <members>HarvestInvoiceSync</members>
+        <members>HarvestOutboundSyncController</members>
+        <members>HarvestOutboundSync_Tests</members>
+        <members>HarvestProject</members>
+        <members>HarvestProjectSync</members>
+        <members>HarvestSetupController</members>
+        <members>HarvestSetupController_Tests</members>
+        <members>HarvestTask</members>
+        <members>HarvestTaskAssignment</members>
+        <members>HarvestTimeEntry</members>
+        <members>HarvestUser</members>
+        <members>HarvestUserAssignment</members>
+        <members>HarvestUtil</members>
+        <members>HarvestUtil_Test</members>
+        <members>Harvest_TestUtil</members>
+        <members>Harvest_Tests</members>
+        <members>IllegalArgumentException</members>
+        <members>IllegalStateException</members>
+        <members>ObjectPaginator</members>
+        <members>ObjectPaginatorListener</members>
+        <members>ObjectPaginatorListenerForTesting</members>
+        <members>ObjectPaginatorTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
+        <members>HarvestClientExportWizard</members>
+        <members>HarvestClientImportConfirmation</members>
+        <members>HarvestClientImportWizard</members>
+        <members>HarvestCreateClient</members>
+        <members>HarvestCreateClientFinish</members>
+        <members>HarvestSetup</members>
+        <members>HarvestSetupInboundIntegration</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ClientContactSync</members>
+        <members>ClientSync</members>
+        <members>CreateHarvestProjectOnClosedOpportunity</members>
+        <members>HarvestPeopleSync</members>
+        <members>ProjectSync</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Harvest_Time_Expense</members>
+        <members>Harvest_Time_Tracking</members>
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Account.Harvest_ID__c</members>
+        <members>Account.Sync_to_Harvest__c</members>
+        <members>Account.isActiveHarvestClient__c</members>
+        <members>Contact.Harvest_ID__c</members>
+        <members>Contact.Sync_to_Harvest__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Amount__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Description__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Estimate__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Kind__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Project__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Quantity__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Taxed2__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Taxed__c</members>
+        <members>Harvest_Estimate_Line_Item__c.Unit_Price__c</members>
+        <members>Harvest_Estimate__c.Account__c</members>
+        <members>Harvest_Estimate__c.Amount__c</members>
+        <members>Harvest_Estimate__c.Created_At__c</members>
+        <members>Harvest_Estimate__c.Currency__c</members>
+        <members>Harvest_Estimate__c.Discount_Amount__c</members>
+        <members>Harvest_Estimate__c.Discount__c</members>
+        <members>Harvest_Estimate__c.Due_Amount__c</members>
+        <members>Harvest_Estimate__c.Due_At_Human_Format__c</members>
+        <members>Harvest_Estimate__c.Due_At__c</members>
+        <members>Harvest_Estimate__c.Harvest_ID__c</members>
+        <members>Harvest_Estimate__c.Invoice_Number__c</members>
+        <members>Harvest_Estimate__c.Issued_At__c</members>
+        <members>Harvest_Estimate__c.Notes__c</members>
+        <members>Harvest_Estimate__c.Period_End__c</members>
+        <members>Harvest_Estimate__c.Period_Start__c</members>
+        <members>Harvest_Estimate__c.Purchase_Order__c</members>
+        <members>Harvest_Estimate__c.State__c</members>
+        <members>Harvest_Estimate__c.Subject__c</members>
+        <members>Harvest_Estimate__c.Tax_2_Amount__c</members>
+        <members>Harvest_Estimate__c.Tax_2__c</members>
+        <members>Harvest_Estimate__c.Tax_Amount__c</members>
+        <members>Harvest_Estimate__c.Tax__c</members>
+        <members>Harvest_Estimate__c.Updated_At__c</members>
+        <members>Harvest_Expense_Category__c.Deactivated__c</members>
+        <members>Harvest_Expense_Category__c.Harvest_ID__c</members>
+        <members>Harvest_Expense_Category__c.Unit_Name__c</members>
+        <members>Harvest_Expense_Category__c.Unit_Price__c</members>
+        <members>Harvest_Expense__c.Expense_Category__c</members>
+        <members>Harvest_Expense__c.Harvest_ID__c</members>
+        <members>Harvest_Expense__c.Has_Receipt__c</members>
+        <members>Harvest_Expense__c.Notes__c</members>
+        <members>Harvest_Expense__c.Project__c</members>
+        <members>Harvest_Expense__c.Receipt_URL__c</members>
+        <members>Harvest_Expense__c.Spent_at__c</members>
+        <members>Harvest_Expense__c.Total_Cost__c</members>
+        <members>Harvest_Expense__c.Units__c</members>
+        <members>Harvest_Invoice_Category__c.Created_At__c</members>
+        <members>Harvest_Invoice_Category__c.Harvest_ID__c</members>
+        <members>Harvest_Invoice_Category__c.Updated_At__c</members>
+        <members>Harvest_Invoice_Category__c.Use_As_Expense__c</members>
+        <members>Harvest_Invoice_Category__c.Use_As_Service__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Amount__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Description__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Invoice__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Kind__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Project__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Quantity__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Taxed2__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Taxed__c</members>
+        <members>Harvest_Invoice_Line_Item__c.Unit_Price__c</members>
+        <members>Harvest_Invoice_Message__c.Body__c</members>
+        <members>Harvest_Invoice_Message__c.Created_At__c</members>
+        <members>Harvest_Invoice_Message__c.Full_Recipient_List__c</members>
+        <members>Harvest_Invoice_Message__c.Harvest_ID__c</members>
+        <members>Harvest_Invoice_Message__c.Invoice__c</members>
+        <members>Harvest_Invoice_Message__c.Send_me_a_copy__c</members>
+        <members>Harvest_Invoice_Message__c.Sent_By_Email__c</members>
+        <members>Harvest_Invoice_Message__c.Sent_By__c</members>
+        <members>Harvest_Invoice_Payment__c.Amount__c</members>
+        <members>Harvest_Invoice_Payment__c.Created_At__c</members>
+        <members>Harvest_Invoice_Payment__c.Harvest_ID__c</members>
+        <members>Harvest_Invoice_Payment__c.Invoice__c</members>
+        <members>Harvest_Invoice_Payment__c.Notes__c</members>
+        <members>Harvest_Invoice_Payment__c.Paid_At__c</members>
+        <members>Harvest_Invoice_Payment__c.Recorded_By_Email__c</members>
+        <members>Harvest_Invoice_Payment__c.Recorded_By__c</members>
+        <members>Harvest_Invoice__c.Account__c</members>
+        <members>Harvest_Invoice__c.Amount__c</members>
+        <members>Harvest_Invoice__c.Created_At__c</members>
+        <members>Harvest_Invoice__c.Currency__c</members>
+        <members>Harvest_Invoice__c.Discount_Amount__c</members>
+        <members>Harvest_Invoice__c.Discount__c</members>
+        <members>Harvest_Invoice__c.Due_Amount__c</members>
+        <members>Harvest_Invoice__c.Due_At_Human_Format__c</members>
+        <members>Harvest_Invoice__c.Due_At__c</members>
+        <members>Harvest_Invoice__c.Estimate__c</members>
+        <members>Harvest_Invoice__c.Harvest_ID__c</members>
+        <members>Harvest_Invoice__c.Invoice_No__c</members>
+        <members>Harvest_Invoice__c.Invoice_Number__c</members>
+        <members>Harvest_Invoice__c.Issued_At__c</members>
+        <members>Harvest_Invoice__c.Notes__c</members>
+        <members>Harvest_Invoice__c.Period_End__c</members>
+        <members>Harvest_Invoice__c.Period_Start__c</members>
+        <members>Harvest_Invoice__c.Purchase_Order__c</members>
+        <members>Harvest_Invoice__c.State__c</members>
+        <members>Harvest_Invoice__c.Subject__c</members>
+        <members>Harvest_Invoice__c.Tax_2_Amount__c</members>
+        <members>Harvest_Invoice__c.Tax_2__c</members>
+        <members>Harvest_Invoice__c.Tax_Amount__c</members>
+        <members>Harvest_Invoice__c.Tax__c</members>
+        <members>Harvest_Invoice__c.Updated_At__c</members>
+        <members>Harvest_Project__c.Account__c</members>
+        <members>Harvest_Project__c.Active__c</members>
+        <members>Harvest_Project__c.Bill_by__c</members>
+        <members>Harvest_Project__c.Billable__c</members>
+        <members>Harvest_Project__c.Budget__c</members>
+        <members>Harvest_Project__c.Budget_by__c</members>
+        <members>Harvest_Project__c.Harvest_ID__c</members>
+        <members>Harvest_Project__c.Notes__c</members>
+        <members>Harvest_Project__c.Opportunity__c</members>
+        <members>Harvest_Project__c.Project_Code__c</members>
+        <members>Harvest_Task_Assignment__c.Billable__c</members>
+        <members>Harvest_Task_Assignment__c.Budget__c</members>
+        <members>Harvest_Task_Assignment__c.Deactivated__c</members>
+        <members>Harvest_Task_Assignment__c.Harvest_ID__c</members>
+        <members>Harvest_Task_Assignment__c.Hourly_rate__c</members>
+        <members>Harvest_Task_Assignment__c.Project_Id__c</members>
+        <members>Harvest_Task_Assignment__c.Project__c</members>
+        <members>Harvest_Task_Assignment__c.Task_Id__c</members>
+        <members>Harvest_Task_Assignment__c.Task__c</members>
+        <members>Harvest_Task__c.Billable_by_default__c</members>
+        <members>Harvest_Task__c.Default_hourly_rate__c</members>
+        <members>Harvest_Task__c.Harvest_ID__c</members>
+        <members>Harvest_Task__c.Is_default__c</members>
+        <members>Harvest_Time_Entry__c.Created_At__c</members>
+        <members>Harvest_Time_Entry__c.Harvest_ID__c</members>
+        <members>Harvest_Time_Entry__c.Hours__c</members>
+        <members>Harvest_Time_Entry__c.Project__c</members>
+        <members>Harvest_Time_Entry__c.Spent_at__c</members>
+        <members>Harvest_Time_Entry__c.Task__c</members>
+        <members>Harvest_Time_Entry__c.Timer_Started_At__c</members>
+        <members>Harvest_User_Assignment__c.Harvest_ID__c</members>
+        <members>Harvest_User_Assignment__c.Harvest_User__c</members>
+        <members>Harvest_User_Assignment__c.Hourly_rate__c</members>
+        <members>Harvest_User_Assignment__c.Is_Deactivated__c</members>
+        <members>Harvest_User_Assignment__c.Is_Project_Manager__c</members>
+        <members>Harvest_User_Assignment__c.Project__c</members>
+        <members>Harvest_User__c.Add_to_all_new_projects_automatically__c</members>
+        <members>Harvest_User__c.Default_hourly_rate__c</members>
+        <members>Harvest_User__c.Department__c</members>
+        <members>Harvest_User__c.Email__c</members>
+        <members>Harvest_User__c.First_name__c</members>
+        <members>Harvest_User__c.Harvest_ID__c</members>
+        <members>Harvest_User__c.Is_Active__c</members>
+        <members>Harvest_User__c.Is_Admin__c</members>
+        <members>Harvest_User__c.Is_Contractor__c</members>
+        <members>Harvest_User__c.Last_name__c</members>
+        <members>Harvest_User__c.Password__c</members>
+        <members>Harvest_User__c.Phone__c</members>
+        <members>Harvest_User__c.Timezone__c</members>
+        <members>Harvest__c.Create_Harvest_Project_Automatically__c</members>
+        <members>Harvest__c.CronTriggerId__c</members>
+        <members>Harvest__c.Delete_Client_in_Harvest__c</members>
+        <members>Harvest__c.Enable_Inbound_Sync__c</members>
+        <members>Harvest__c.InboundLastRunDateTime__c</members>
+        <members>Harvest__c.Key__c</members>
+        <members>Harvest__c.Password__c</members>
+        <members>Harvest__c.SSL__c</members>
+        <members>Harvest__c.Subdomain__c</members>
+        <members>Harvest__c.Username__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Harvest_Estimate_Line_Item__c</members>
+        <members>Harvest_Estimate__c</members>
+        <members>Harvest_Expense_Category__c</members>
+        <members>Harvest_Expense__c</members>
+        <members>Harvest_Invoice_Category__c</members>
+        <members>Harvest_Invoice_Line_Item__c</members>
+        <members>Harvest_Invoice_Message__c</members>
+        <members>Harvest_Invoice_Payment__c</members>
+        <members>Harvest_Invoice__c</members>
+        <members>Harvest_Project__c</members>
+        <members>Harvest_Task_Assignment__c</members>
+        <members>Harvest_Task__c</members>
+        <members>Harvest_Time_Entry__c</members>
+        <members>Harvest_User_Assignment__c</members>
+        <members>Harvest_User__c</members>
+        <members>Harvest__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Harvest</members>
+        <members>Harvest_Application</members>
+        <members>Harvest_Estimate__c</members>
+        <members>Harvest_Expense_Category__c</members>
+        <members>Harvest_Invoice__c</members>
+        <members>Harvest_Project__c</members>
+        <members>Harvest_Setup</members>
+        <members>Harvest_Task__c</members>
+        <members>Harvest_User__c</members>
         <name>CustomTab</name>
     </types>
     <types>
@@ -27,13 +272,60 @@
         <name>Document</name>
     </types>
     <types>
+        <members>Harvest_Estimate_Line_Item__c-Harvest Estimate Line Item Layout</members>
+        <members>Harvest_Estimate__c-Harvest Estimate Layout</members>
+        <members>Harvest_Expense_Category__c-Harvest Expense Category Layout</members>
+        <members>Harvest_Expense__c-Harvest Expense Layout</members>
+        <members>Harvest_Invoice_Category__c-Harvest Invoice Category Layout</members>
+        <members>Harvest_Invoice_Line_Item__c-Harvest Invoice Line Item Layout</members>
+        <members>Harvest_Invoice_Message__c-Harvest Invoice Message Layout</members>
+        <members>Harvest_Invoice_Payment__c-Harvest Invoice Payment Layout</members>
+        <members>Harvest_Invoice__c-Harvest Invoice Layout</members>
+        <members>Harvest_Project__c-Harvest Project Layout</members>
+        <members>Harvest_Task_Assignment__c-Harvest Task Assignment Layout</members>
+        <members>Harvest_Task__c-Harvest Task Layout</members>
+        <members>Harvest_Time_Entry__c-Harvest Time Entry Layout</members>
+        <members>Harvest_User_Assignment__c-Harvest User Assignment Layout</members>
+        <members>Harvest_User__c-Harvest User Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Harvest_Estimate__c.All</members>
+        <members>Harvest_Expense_Category__c.All</members>
+        <members>Harvest_Invoice__c.All_Draft_Invoices</members>
+        <members>Harvest_Invoice__c.All_Invoices</members>
+        <members>Harvest_Invoice__c.All_Open_Invoices</members>
+        <members>Harvest_Invoice__c.All_Paid_Invoices</members>
+        <members>Harvest_Project__c.All</members>
+        <members>Harvest_Task__c.All</members>
+        <members>Harvest_User__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
         <members>Harvest</members>
         <members>Harvest_SSL</members>
         <name>RemoteSiteSetting</name>
     </types>
     <types>
-        <members>*</members>
+        <members>cancel</members>
+        <members>checked</members>
+        <members>harvest</members>
+        <members>loading</members>
+        <members>unchecked</members>
         <name>StaticResource</name>
     </types>
-    <version>20.0</version>
+    <types>
+        <members>Harvest_Estimate__c.View_in_Harvest</members>
+        <members>Harvest_Expense_Category__c.View_in_Harvest</members>
+        <members>Harvest_Invoice_Category__c.View_in_Harvest</members>
+        <members>Harvest_Invoice__c.Refresh_Invoice</members>
+        <members>Harvest_Invoice__c.View_in_Harvest</members>
+        <members>Harvest_Project__c.Mass_Delete</members>
+        <members>Harvest_Project__c.Refresh_Project</members>
+        <members>Harvest_Project__c.View_in_Harvest</members>
+        <members>Harvest_Task__c.View_in_Harvest</members>
+        <members>Harvest_User__c.View_in_Harvest</members>
+        <name>WebLink</name>
+    </types>
+    <version>31.0</version>
 </Package>

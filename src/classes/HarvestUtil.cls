@@ -22,7 +22,27 @@ public class HarvestUtil {
         con.Sync_to_Harvest__c = true;  
         return con;
     }
-    
+
+
+    // RBW
+    public static Harvest_Time_Entry__c transformTimeEntry(HarvestTimeEntry t, Map<String, Id> projectMap, Map<String, Id> taskMap) {
+        Harvest_Time_Entry__c hte = new Harvest_Time_Entry__c();
+        hte.Harvest_ID__c = t.id;
+        hte.Hours__c      = t.hours;
+        hte.Project__c    = projectMap.get(t.projectid);
+        hte.Task__c       = taskMap.get(t.taskid);
+        hte.Spent_at__c   = convertDate(t.spentat);
+        hte.Created_at__c = convertDateTime(t.createdat);
+
+        return hte;
+    }
+
+
+
+
+
+
+
     public static Harvest_Invoice__c transformInvoice(HarvestInvoice i, Map<String, Id> accountMap) {
         Harvest_Invoice__c hi = new Harvest_Invoice__c();
         hi.Account__c = accountMap.get(i.clientId);
@@ -80,15 +100,15 @@ public class HarvestUtil {
         return hu;
     }
     
-	public static Harvest_Task__c transformTask(HarvestTask t) {
-		Harvest_Task__c ht = new Harvest_Task__c();
-		ht.Name = t.name;
-		ht.Billable_by_default__c = t.billableByDefault;
-		ht.Default_hourly_rate__c = convertDouble(t.defaultHourlyRate);
-		ht.Harvest_ID__c = t.id;
-		ht.Is_default__c = t.isDefault;
-		return ht;
-	}
+    public static Harvest_Task__c transformTask(HarvestTask t) {
+        Harvest_Task__c ht = new Harvest_Task__c();
+        ht.Name = t.name.left(Math.min(80, t.name.length()));
+        ht.Billable_by_default__c = t.billableByDefault;
+        ht.Default_hourly_rate__c = convertDouble(t.defaultHourlyRate);
+        ht.Harvest_ID__c = t.id;
+        ht.Is_default__c = t.isDefault;
+        return ht;
+    }
     
     public static Harvest_Project__c transformProject(HarvestProject hp, Map<String, Id> accountMap) {
         Harvest_Project__c p = new Harvest_Project__c();
@@ -106,28 +126,28 @@ public class HarvestUtil {
         return p;
     }
     
-	public static Harvest_Task_Assignment__c transformTaskAssignment(HarvestTaskAssignment hta, Map<String, Id> projectMap, Map<String, Id> taskMap) {
-		Harvest_Task_Assignment__c ta = new Harvest_Task_Assignment__c();
-		ta.Billable__c = hta.billable;
-		ta.Budget__c = convertDouble(hta.budget);
-		ta.Deactivated__c = hta.deactivated;
-		ta.Harvest_ID__c = hta.id;
-		ta.Hourly_rate__c = convertDouble(hta.hourlyRate);
-		ta.Project__c = projectMap.get(hta.projectId);
-		ta.Task__c = taskMap.get(hta.taskId);
-		return ta;
-	}
-	
-	public static Harvest_User_Assignment__c transformUserAssignment(HarvestUserAssignment hua, Map<String, Id> projectMap, Map<String, Id> userMap) {
-		Harvest_User_Assignment__c ua = new Harvest_User_Assignment__c();
-		ua.Harvest_ID__c = hua.id;
-		ua.Harvest_User__c = userMap.get(hua.userid);
-		ua.Hourly_rate__c = convertDecimal(hua.hourlyRate);
-		ua.Is_Deactivated__c = hua.deactivated;
-		ua.Is_Project_Manager__c = hua.isProjectManager;
-		ua.Project__c = projectMap.get(hua.projectId);
-		return ua;
-	}
+    public static Harvest_Task_Assignment__c transformTaskAssignment(HarvestTaskAssignment hta, Map<String, Id> projectMap, Map<String, Id> taskMap) {
+        Harvest_Task_Assignment__c ta = new Harvest_Task_Assignment__c();
+        ta.Billable__c = hta.billable;
+        ta.Budget__c = convertDouble(hta.budget);
+        ta.Deactivated__c = hta.deactivated;
+        ta.Harvest_ID__c = hta.id;
+        ta.Hourly_rate__c = convertDouble(hta.hourlyRate);
+        ta.Project__c = projectMap.get(hta.projectId);
+        ta.Task__c = taskMap.get(hta.taskId);
+        return ta;
+    }
+    
+    public static Harvest_User_Assignment__c transformUserAssignment(HarvestUserAssignment hua, Map<String, Id> projectMap, Map<String, Id> userMap) {
+        Harvest_User_Assignment__c ua = new Harvest_User_Assignment__c();
+        ua.Harvest_ID__c = hua.id;
+        ua.Harvest_User__c = userMap.get(hua.userid);
+        ua.Hourly_rate__c = convertDecimal(hua.hourlyRate);
+        ua.Is_Deactivated__c = hua.deactivated;
+        ua.Is_Project_Manager__c = hua.isProjectManager;
+        ua.Project__c = projectMap.get(hua.projectId);
+        return ua;
+    }
     
     public static Double convertDouble(String s) {
         if (s == '' || s == null)
@@ -186,6 +206,22 @@ public class HarvestUtil {
         return returnMap;
     }
             
+    public static Map<String, Id> getHarvestTaskMap() {
+        Map<String, Id> returnMap = new Map<String, Id>();      
+        for (Harvest_Task__c p : [Select Id, Harvest_Id__c FROM Harvest_Task__c]) {
+            returnMap.put(p.Harvest_Id__c, p.Id);
+        }
+        return returnMap;
+    }
+            
+    public static Map<String, Id> getHarvestUserMap() {
+        Map<String, Id> returnMap = new Map<String, Id>();      
+        for (Harvest_User__c p : [Select Id, Harvest_Id__c from Harvest_User__c]) {
+            returnMap.put(p.Harvest_Id__c, p.Id);
+        }
+        return returnMap;
+    }
+            
     public static String getBillBy(String value) {
         if (value == null)
             return 'none';
@@ -226,6 +262,24 @@ public class HarvestUtil {
                 Integer.valueOf(hours), 
                 Integer.valueOf(minutes), 
                 Integer.valueOf(seconds)
+            );
+        }
+    }   
+
+    // RBW
+    // example : <spent-at type="date">2014-10-27</spent-at>
+    
+    public static Date convertDate(String s) {
+        if (s == '' || s == null) {
+            return null;
+        } else {
+            String year  = s.substring(0, 4);
+            String month = s.substring(5, 7);
+            String day   = s.substring(8, 10);
+            return Date.newInstance(
+                Integer.valueOf(year), 
+                Integer.valueOf(month), 
+                Integer.valueOf(day)
             );
         }
     }   

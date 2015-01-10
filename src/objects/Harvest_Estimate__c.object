@@ -5,6 +5,10 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -17,11 +21,19 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -32,45 +44,48 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Account__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipName>Harvest_Estimates</relationshipName>
         <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
         <fullName>Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Amount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Created_At__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Created At</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
     <fields>
         <fullName>Currency__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Currency</label>
         <picklist>
@@ -412,124 +427,124 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Discount_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Discount Amount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Discount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Discount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Percent</type>
     </fields>
     <fields>
         <fullName>Due_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Due Amount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Due_At_Human_Format__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Terms</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>Due_At__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Due Date</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Harvest_ID__c</fullName>
         <caseSensitive>false</caseSensitive>
-        <deprecated>false</deprecated>
         <externalId>true</externalId>
         <label>Harvest ID</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>true</unique>
     </fields>
     <fields>
         <fullName>Invoice_Number__c</fullName>
         <caseSensitive>false</caseSensitive>
-        <deprecated>false</deprecated>
         <externalId>true</externalId>
         <label>Invoice Number</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>true</unique>
     </fields>
     <fields>
         <fullName>Issued_At__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Issued At</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Notes__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Notes</label>
         <length>32000</length>
+        <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Period_End__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Period End</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Period_Start__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Period Start</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
     <fields>
         <fullName>Purchase_Order__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Purchase Order</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>State__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>State</label>
         <picklist>
@@ -555,64 +570,65 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Subject__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Subject</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
     <fields>
         <fullName>Tax_2_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Tax 2 Amount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Tax_2__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Tax 2</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Percent</type>
     </fields>
     <fields>
         <fullName>Tax_Amount__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Tax Amount</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
     <fields>
         <fullName>Tax__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Tax</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
+        <trackTrending>false</trackTrending>
         <type>Percent</type>
     </fields>
     <fields>
         <fullName>Updated_At__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Updated At</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
     <label>Harvest Estimate</label>
@@ -647,6 +663,7 @@
         <fullName>View_in_Harvest</fullName>
         <availability>online</availability>
         <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
         <hasMenubar>false</hasMenubar>
         <hasScrollbars>true</hasScrollbars>
         <hasToolbar>false</hasToolbar>
