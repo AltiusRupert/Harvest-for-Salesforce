@@ -1,6 +1,11 @@
 Harvest for Salesforce
 ======================
 
+<a href="https://githubsfdeploy.herokuapp.com?owner=AltiusRupert&repo=Harvest-for-Salesforce">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
+</a>
+
 Native Salesforce.com integration with the Harvest API.  Features Harvest Clients, Contacts, Projects, Tasks integration with Salesforce Accounts, Contact, Opportunities, Projects, and Users.
 
 Installation
